@@ -1,33 +1,37 @@
-function keypad(){
-    return(
-        <div className="keypad">
-            <div className="row">
-                <button className="digit">7</button>
-                <button className="digit">8</button>
-                <button className="digit">9</button>
-                <button className="operator">/</button>
-                  </div>
-                  <div className="row">
-                <button className="digit">4</button>
-                <button className="digit">5</button>
-                <button className="digit">6</button>
-                <button className="operator">*</button>
-                  </div>
-                  <div className="row">
-                <button className="digit">1</button>
-                <button className="digit">2</button>
-                <button className="digit">3</button>
-                <button className="operator">-</button>
-                  </div>
-                  <div className="row">
-                <button className="digit">0</button>
-                <button className="digit">=</button>
-                <button className="digit">c</button>
-                <button className="operator">+</button>
-                  </div>
+import React from "react";
 
-        </div>
+function Keypad({ HandleClick, Calculate, HandleClear }) {
+  return (
+    <div className="keypad">
+      <div className="row">
+        <button className="digit" onClick={() => HandleClick("7")}>7</button>
+        <button className="digit" onClick={() => HandleClick("8")}>8</button>
+        <button className="digit" onClick={() => HandleClick("9")}>9</button>
+        <button className="operator" onClick={() => HandleClick("/")}>/</button>
+      </div>
 
-    )
+      <div className="row">
+        <button className="digit" onClick={() => HandleClick("4")}>4</button>
+        <button className="digit" onClick={() => HandleClick("5")}>5</button>
+        <button className="digit" onClick={() => HandleClick("6")}>6</button>
+        <button className="operator" onClick={() => HandleClick("*")}>*</button>
+      </div>
+
+      <div className="row">
+        <button className="digit" onClick={() => HandleClick("1")}>1</button>
+        <button className="digit" onClick={() => HandleClick("2")}>2</button>
+        <button className="digit" onClick={() => HandleClick("3")}>3</button>
+        <button className="operator" onClick={() => HandleClick("-")}>-</button>
+      </div>
+
+      <div className="row">
+        <button className="digit" onClick={() => HandleClick("0")}>0</button>
+        <button className="fun-key" onClick={Calculate}>=</button>
+        <button className="fun-key" onClick={HandleClear}>C</button>
+        <button className="operator" onClick={() => HandleClick("+")}>+</button>
+      </div>
+    </div>
+  );
 }
-export default keypad;
+
+export default Keypad;
